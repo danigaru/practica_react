@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export function Navbar() {
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
+      <NavLink to="/" className="navbar-brand">
+        HeroApp
+      </NavLink>
       <button
         className="navbar-toggler"
         type="button"
@@ -20,18 +21,21 @@ export function Navbar() {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <a className="nav-link" href="#">
-            DC <span className="sr-only">(current)</span>
-          </a>
-          <a className="nav-link" href="#">
+          <NavLink activeClassName="active" to="/dc" className="nav-link">
+            DC
+          </NavLink>
+          <NavLink to="/marvel" className="nav-link">
             Marvel
-          </a>
+          </NavLink>
+          <NavLink to="/search" className="nav-link">
+            Search
+          </NavLink>
         </ul>
 
         <div className="text-right">
-          <a className="nav-link" href="#">
+          <NavLink to="/logout" className="nav-link">
             Logout
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>
